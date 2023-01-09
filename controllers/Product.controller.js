@@ -4,7 +4,7 @@ const Product = require('../models/Product.model');
 const productsGet = async (req = request, res = response) => {
     try {
         const id = req.query.id;
-        let usuarios = null;
+        let products = null;
         if (id) {
             products = await Product.findById(id);
         } else {
