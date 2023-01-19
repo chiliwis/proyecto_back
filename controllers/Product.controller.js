@@ -5,7 +5,7 @@ const productsGet = async (req = request, res = response) => {
     try {
         const id = req.query.id;
         let products = null;
-        if (id) {
+        if (_id) {
             products = await Product.findById(_id);
         } else {
             products = await Product.find();
