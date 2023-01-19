@@ -1,8 +1,9 @@
 const express = require('express')
 const cors = require('cors');
 const userRoutes = require('./routes/users.routes');
+const productsRoutes = require('./routes/product.routes');
 const rutasAuth = require('./routes/auth.routes');
-const productRoutes = require('./routes/product.routes');
+const categoriesRoutes = require('./routes/category.routes');
 const { dbConnection } = require('./database/config');
 require('dotenv').config()
 const app = express();
@@ -22,8 +23,9 @@ app.get("/", function (req, res) {
     await dbConnection();
     const rutaBase = '/api/v1';
     app.use(rutaBase, userRoutes);
+    app.use(rutaBase, productsRoutes);
     app.use(rutaBase, rutasAuth);
-    app.use(rutaBase, productRoutes);
+    app.use(rutaBase, categoriesRoutes);
 })();
 
 
