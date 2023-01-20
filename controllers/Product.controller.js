@@ -40,6 +40,7 @@ const productsPost = async (req = request, res = response) => {
     }
 };
 
+
 const productsPut = async (req = request, res = response) => {
     const { id } = req.params;
     const body = req.body;
